@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --rosa: #d98eaa;
+  --rosa-claro: #f8e6ec;
+  --creme: #fffaf5;
+  --texto: #624650;
+  --branco: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--creme);
+  color: var(--texto);
+  font-family: 'DM Sans', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 55px 20px 45px;
+  background: linear-gradient(135deg, #f9e5ed, #fff6f0);
+  border-bottom: 1px solid #efd4df;
+}
+
+.marca {
+  color: #b36c89;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 6vw, 54px);
+  font-weight: 500;
+  margin: 18px 0 12px;
+}
+
+header > p:last-child {
+  font-size: 14px;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 35px 22px 55px;
+}
+
+.pesquisa {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+input, select, button {
+  border: 1px solid #e8cbd7;
+  border-radius: 12px;
+  padding: 13px 15px;
+  font: inherit;
+}
+
+input, select {
+  background: white;
+  color: var(--texto);
+}
+
+input {
+  flex: 1;
+  min-width: 200px;
+}
+
+button {
+  background: var(--rosa);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #bd718f;
+  transform: translateY(-1px);
+}
+
+#mensagem {
+  text-align: center;
+  padding: 15px;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #f0dce4;
+  border-radius: 16px;
+  overflow: hidden;
+  padding-bottom: 18px;
+  box-shadow: 0 5px 18px #8c53600b;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  padding: 18px;
+  background: #fff5f8;
+}
+
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  margin: 12px 16px 8px;
+}
+
+.card p {
+  margin: 8px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.preco {
+  color: #b45f83;
+  font-weight: 600;
+}
+
+.detalhes {
+  margin: 12px 16px 0;
+  width: calc(100% - 32px);
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  background: #f8e6ec;
+  border-top: 1px solid #efd4df;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 38px 16px;
+  }
+
+  .pesquisa {
+    flex-direction: column;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+
+  .produtos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .card img {
+    height: 155px;
+  }
+
+  .card h2 {
+    font-size: 16px;
+  }
+}
+/* Área de logs adicionada para a Parte 2 da avaliação */
+.painel-logs {
+  margin-top: 42px;
+  padding-top: 25px;
+  border-top: 1px solid #efd4df;
+}
+#area-logs {
+  margin-top: 22px;
+  padding: 22px;
+  background: #fff5f8;
+  border: 1px solid #f0dce4;
+  border-radius: 16px;
+}
+#area-logs[hidden] { display: none; }
+.cabecalho-logs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cabecalho-logs h2 {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+}
+.secundario { background: #b36c89; }
+.lista-logs { display: grid; gap: 12px; }
+.log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #efd4df;
+  border-radius: 12px;
+}
+.log-texto { min-width: 0; overflow-wrap: anywhere; }
+.log-texto strong { display: block; margin-bottom: 5px; }
+.log-texto p { margin: 0; font-size: 13px; line-height: 1.6; }
+.excluir-log { flex-shrink: 0; background: #94536d; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 600px) {
+  #area-logs { padding: 14px; }
+  .cabecalho-logs h2 { font-size: 20px; }
+  .log-item { align-items: stretch; flex-direction: column; }
+}
